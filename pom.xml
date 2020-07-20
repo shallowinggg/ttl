@@ -97,9 +97,9 @@
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
             </plugin>
-            <!--            <plugin>-->
-            <!--                <artifactId>maven-checkstyle-plugin</artifactId>-->
-            <!--            </plugin>-->
+            <plugin>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+            </plugin>
         </plugins>
         <pluginManagement>
             <plugins>
@@ -184,7 +184,7 @@
                     <executions>
                         <execution>
                             <id>checkstyle</id>
-                            <phase>validate</phase>
+                            <phase>verify</phase>
                             <configuration>
                                 <configLocation>${project.basedir}/checkStyle.xml</configLocation>
                                 <encoding>UTF-8</encoding>

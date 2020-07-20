@@ -4,169 +4,170 @@
         "https://checkstyle.org/dtds/configuration_1_3.dtd">
 <module name="Checker">
 
-    <!--    <module name="FileTabCharacter">-->
-    <!--        <property name="eachLine" value="true"/>-->
-    <!--    </module>-->
+    <module name="FileTabCharacter">
+        <property name="eachLine" value="true"/>
+    </module>
 
-    <!--    <module name="RegexpSinglelineJava">-->
-    <!--        <property name="format" value="System\.(out)|(err)\.print(ln)?"/>-->
-    <!--        <property name="message" value="Prohibit invoking System.out in source code !"/>-->
-    <!--        <property name="ignoreComments" value="true"/>-->
-    <!--    </module>-->
-
-    <!--    <module name="RegexpSinglelineJava">-->
-    <!--        <property name="format"-->
-    <!--                  value=".*[\u3400-\u4DB5\u4E00-\u9FA5\u9FA6-\u9FBB\uF900-\uFA2D\uFA30-\uFA6A\uFA70-\uFAD9\uFF00-\uFFEF\u2E80-\u2EFF\u3000-\u303F\u31C0-\u31EF]+.*"/>-->
-    <!--        <property name="message" value="Not allow chinese character !"/>-->
-    <!--        <property name="ignoreComments" value="true"/>-->
-    <!--    </module>-->
-
-    <!--    <module name="FileLength">-->
-    <!--        <property name="max" value="3000"/>-->
-    <!--    </module>-->
+    <module name="FileLength">
+        <property name="max" value="3000"/>
+    </module>
 
     <module name="TreeWalker">
         <!-- Annotations -->
 
         <!-- 同一行不允许有多个非参数注解 -->
-        <!--        <module name="AnnotationLocation">-->
-        <!--            <property name="allowSamelineSingleParameterlessAnnotation" value="false"/>-->
-        <!--        </module>-->
-        <!--        <module name="AnnotationUseStyle">-->
-        <!--            <property name="elementStyle" value="compact"/>-->
-        <!--        </module>-->
-        <!--        &lt;!&ndash; 含有/** {@inheritDoc} */注释的方法需要@Override注解 &ndash;&gt;-->
-        <!--        <module name="MissingOverride"/>-->
-        <!--        <module name="PackageAnnotation"/>-->
+        <module name="AnnotationLocation">
+            <property name="allowSamelineSingleParameterlessAnnotation" value="false"/>
+        </module>
+        <module name="AnnotationUseStyle">
+            <property name="elementStyle" value="compact"/>
+        </module>
+        <!-- 含有/** {@inheritDoc} */注释的方法需要@Override注解 -->
+        <module name="MissingOverride"/>
+        <module name="PackageAnnotation"/>
 
         <!-- block check -->
 
         <!-- 避免嵌套代码块， { int x = 1; } -->
-        <!--        <module name="AvoidNestedBlocks"/>-->
-        <!--        &lt;!&ndash; 不允许有空的代码块，允许只存在文本 &ndash;&gt;-->
-        <!--        <module name="EmptyBlock">-->
-        <!--            <property name="option" value="text"/>-->
-        <!--        </module>-->
-        <!--        &lt;!&ndash; 左大括号必须在行末 &ndash;&gt;-->
-        <!--        <module name="LeftCurly"/>-->
-        <!--        &lt;!&ndash; 即使单行的if else等语句也需要写大括号 &ndash;&gt;-->
-        <!--        <module name="NeedBraces"/>-->
-        <!--        <module name="RightCurly"/>-->
+        <module name="AvoidNestedBlocks"/>
+        <!-- 不允许有空的代码块，允许只存在文本 -->
+        <module name="EmptyBlock">
+            <property name="option" value="text"/>
+        </module>
+        <!-- 左大括号必须在行末 -->
+        <module name="LeftCurly"/>
+        <!-- 即使单行的if else等语句也需要写大括号 -->
+        <module name="NeedBraces"/>
+        <module name="RightCurly"/>
 
         <!-- class design -->
 
         <!-- 只拥有private构造方法的类不需要声明final -->
-        <!--        <module name="FinalClass"/>-->
-        <!--        &lt;!&ndash; utility类不能拥有public构造方法 &ndash;&gt;-->
-        <!--        <module name="HideUtilityClassConstructor"/>-->
-        <!--        &lt;!&ndash; 内部类必须位于顶级类文件的最后 &ndash;&gt;-->
-        <!--        <module name="InnerTypeLast"/>-->
-        <!--        &lt;!&ndash; 接口类不能用作只包含常量 &ndash;&gt;-->
-        <!--        <module name="InterfaceIsType"/>-->
-        <!--        <module name="MutableException">-->
-        <!--            <property name="format" value="^.*Exception$"/>-->
-        <!--        </module>-->
-        <!--        <module name="OneTopLevelClass"/>-->
+        <module name="FinalClass"/>
+        <!-- utility类不能拥有public构造方法 -->
+        <module name="HideUtilityClassConstructor"/>
+        <!-- 内部类必须位于顶级类文件的最后 -->
+        <module name="InnerTypeLast"/>
+        <!-- 接口类不能用作只包含常量 -->
+        <module name="InterfaceIsType"/>
+        <module name="MutableException">
+            <property name="format" value="^.*Exception$"/>
+        </module>
+        <module name="OneTopLevelClass"/>
 
         <!-- coding -->
 
-        <!--        &lt;!&ndash; 不允许双括号初始化 &ndash;&gt;-->
+        <!-- 不允许双括号初始化 -->
         <!--        <module name="AvoidDoubleBraceInitialization"/>-->
-        <!--        &lt;!&ndash; 不允许定义协变equals方法，例如 public boolean equals(Test o) &ndash;&gt;-->
-        <!--        <module name="CovariantEquals"/>-->
-        <!--        &lt;!&ndash; 不允许空语句，例如 if (test); &ndash;&gt;-->
-        <!--        <module name="EmptyStatement"/>-->
-        <!--        &lt;!&ndash; 调用equals方法的对象不能有为null的可能 &ndash;&gt;-->
-        <!--        <module name="EqualsAvoidNull"/>-->
-        <!--        &lt;!&ndash;Checks that classes that override equals() also override hashCode()&ndash;&gt;-->
-        <!--        <module name="EqualsHashCode"/>-->
-        <!--        &lt;!&ndash; 不允许一行定义多个变量 &ndash;&gt;-->
-        <!--        <module name="MultipleVariableDeclarations"/>-->
-        <!--        &lt;!&ndash; 代码块的嵌套深度不得超过3层 &ndash;&gt;-->
-        <!--        <module name="NestedForDepth">-->
-        <!--            <property name="max" value="3"/>-->
-        <!--        </module>-->
-        <!--        &lt;!&ndash; if代码块的嵌套深度不得超过5层 &ndash;&gt;-->
-        <!--        <module name="NestedIfDepth">-->
-        <!--            <property name="max" value="5"/>-->
-        <!--        </module>-->
-        <!--        &lt;!&ndash; try代码块的嵌套深度不得超过3层 &ndash;&gt;-->
-        <!--        <module name="NestedTryDepth">-->
-        <!--            <property name="max" value="3"/>-->
-        <!--        </module>-->
-        <!--        &lt;!&ndash; 不允许依赖finalize方法的行为 &ndash;&gt;-->
-        <!--        <module name="NoFinalizer"/>-->
-        <!--        &lt;!&ndash; 一行只允许存在一条语句 &ndash;&gt;-->
-        <!--        <module name="OneStatementPerLine"/>-->
-        <!--        &lt;!&ndash; 重载方法需要写在一起 &ndash;&gt;-->
-        <!--        <module name="OverloadMethodsDeclarationOrder"/>-->
-        <!--        &lt;!&ndash;Checks for over-complicated boolean expressions. Currently finds code like if (topic == true), topic || true, !false, etc.&ndash;&gt;-->
-        <!--        <module name="SimplifyBooleanExpression"/>-->
-        <!--        &lt;!&ndash;Checks for over-complicated boolean return statements. &ndash;&gt;-->
-        <!--        <module name="SimplifyBooleanReturn"/>-->
-        <!--        &lt;!&ndash; 不允许使用==， !=比较String &ndash;&gt;-->
-        <!--        <module name="StringLiteralEquality"/>-->
-        <!--        &lt;!&ndash; Check that the default is after all the cases in producerGroup switch statement &ndash;&gt;-->
-        <!--        <module name="DefaultComesLast"/>-->
+        <!-- 不允许定义协变equals方法，例如 public boolean equals(Test o) -->
+        <module name="CovariantEquals"/>
+        <!-- 不允许空语句，例如 if (test); -->
+        <module name="EmptyStatement"/>
+        <!-- 调用equals方法的对象不能有为null的可能 -->
+        <module name="EqualsAvoidNull"/>
+        <!--Checks that classes that override equals() also override hashCode()-->
+        <module name="EqualsHashCode"/>
+        <!-- 不允许一行定义多个变量 -->
+        <module name="MultipleVariableDeclarations"/>
+        <!-- 代码块的嵌套深度不得超过3层 -->
+        <module name="NestedForDepth">
+            <property name="max" value="3"/>
+        </module>
+        <!-- if代码块的嵌套深度不得超过5层 -->
+        <module name="NestedIfDepth">
+            <property name="max" value="5"/>
+        </module>
+        <!-- try代码块的嵌套深度不得超过3层 -->
+        <module name="NestedTryDepth">
+            <property name="max" value="3"/>
+        </module>
+        <!-- 不允许依赖finalize方法的行为 -->
+        <module name="NoFinalizer"/>
+        <!-- 一行只允许存在一条语句 -->
+        <module name="OneStatementPerLine"/>
+        <!-- 重载方法需要写在一起 -->
+        <module name="OverloadMethodsDeclarationOrder"/>
+        <!--Checks for over-complicated boolean expressions. Currently finds code like if (topic == true), topic || true, !false, etc.-->
+        <module name="SimplifyBooleanExpression"/>
+        <!--Checks for over-complicated boolean return statements. -->
+        <module name="SimplifyBooleanReturn"/>
+        <!-- 不允许使用==， !=比较String -->
+        <module name="StringLiteralEquality"/>
+        <!-- Check that the default is after all the cases in producerGroup switch statement -->
+        <module name="DefaultComesLast"/>
 
         <!-- Importing -->
 
-        <!--        &lt;!&ndash; 不允许无用import &ndash;&gt;-->
-        <!--        <module name="UnusedImports"/>-->
-        <!--        &lt;!&ndash; 不允许重复import &ndash;&gt;-->
-        <!--        <module name="RedundantImport"/>-->
-        <!--        &lt;!&ndash; 不允许星型import，避免过度耦合 &ndash;&gt;-->
-        <!--        <module name="AvoidStarImport"/>-->
+        <!-- 不允许无用import -->
+        <module name="UnusedImports"/>
+        <!-- 不允许重复import -->
+        <module name="RedundantImport"/>
+        <!-- 不允许星型import，避免过度耦合 -->
+        <module name="AvoidStarImport"/>
 
         <!-- Miscellaneous -->
 
-        <!--        &lt;!&ndash; 使用java风格的数组类型定义，即int[] a &ndash;&gt;-->
-        <!--        <module name="ArrayTypeStyle"/>-->
-        <!--        &lt;!&ndash; 检查注释缩进 &ndash;&gt;-->
-        <!--        <module name="CommentsIndentation"/>-->
-        <!--        &lt;!&ndash; Checks that the outer type name and the file name match. For example, the class Foo must be in a file named Foo.java.  &ndash;&gt;-->
-        <!--        <module name="OuterTypeFilename"/>-->
-        <!--        &lt;!&ndash; Checks that long constants are defined with an upper ell &ndash;&gt;-->
-        <!--        <module name="UpperEll"/>-->
+        <!-- 使用java风格的数组类型定义，即int[] a -->
+        <module name="ArrayTypeStyle"/>
+        <!-- 检查注释缩进 -->
+        <module name="CommentsIndentation"/>
+        <!-- Checks that the outer type name and the file name match. For example, the class Foo must be in a file named Foo.java.  -->
+        <module name="OuterTypeFilename"/>
+        <!-- Checks that long constants are defined with an upper ell -->
+        <module name="UpperEll"/>
 
         <!-- Naming -->
 
-        <!--        &lt;!&ndash;Validates identifiers for class type parameters&ndash;&gt;-->
-        <!--        <module name="ClassTypeParameterName">-->
-        <!--            <property name="format" value="(^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$)"/>-->
-        <!--        </module>-->
-        <!--        <module name="ConstantName">-->
-        <!--            <property name="format" value="(^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$)|(^log(ger)?$)"/>-->
-        <!--        </module>-->
-        <!--        &lt;!&ndash;Checks that local, non-final variable names conform to producerGroup format specified by the format property&ndash;&gt;-->
-        <!--        <module name="LocalVariableName"/>-->
-        <!--        &lt;!&ndash;Validates identifiers for local, final variables, including catch parameters&ndash;&gt;-->
-        <!--        <module name="LocalFinalVariableName"/>-->
-        <!--        &lt;!&ndash;Validates identifiers for non-static fields&ndash;&gt;-->
-        <!--        <module name="MemberName"/>-->
-        <!--        <module name="MethodName"/>-->
-        <!--        &lt;!&ndash;Validates identifiers for method type parameters&ndash;&gt;-->
-        <!--        <module name="MethodTypeParameterName">-->
-        <!--            <property name="format" value="(^[A-Z][A-Z0-9]*$)"/>-->
-        <!--        </module>-->
-        <!--        <module name="PackageName">-->
-        <!--            <property name="format" value="^com\.nacre\.ttl(\.[a-z]+)*$"/>-->
-        <!--        </module>-->
-        <!--        <module name="ParameterName"/>-->
-        <!--        <module name="StaticVariableName"/>-->
-        <!--        <module name="TypeName"/>-->
+        <!--Validates identifiers for class type parameters-->
+        <module name="ClassTypeParameterName">
+            <property name="format" value="(^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$)"/>
+        </module>
+        <module name="ConstantName">
+            <property name="format" value="(^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$)|(^log(ger)?$)"/>
+        </module>
+        <!--Checks that local, non-final variable names conform to producerGroup format specified by the format property-->
+        <module name="LocalVariableName"/>
+        <!--Validates identifiers for local, final variables, including catch parameters-->
+        <module name="LocalFinalVariableName"/>
+        <!--Validates identifiers for non-static fields-->
+        <module name="MemberName"/>
+        <module name="MethodName"/>
+        <!--Validates identifiers for method type parameters-->
+        <module name="MethodTypeParameterName">
+            <property name="format" value="(^[A-Z][A-Z0-9]*$)"/>
+        </module>
+        <module name="PackageName">
+            <property name="format" value="^com\.nacre\.ttl(\.[a-z]+)*$"/>
+        </module>
+        <module name="ParameterName"/>
+        <module name="StaticVariableName"/>
+        <module name="TypeName"/>
 
         <!--whitespace-->
 
-        <!--        <module name="EmptyLineSeparator"/>-->
-        <!--        <module name="FileTabCharacter"/>-->
-        <!--        <module name="GenericWhitespace"/>-->
-        <!--        <module name="MethodParamPad"/>-->
-        <!--        <module name="NoLineWrap"/>-->
-        <!--        <module name="ParenPad"/>-->
-        <!--        <module name="TypecastParenPad"/>-->
-        <!--        <module name="WhitespaceAfter"/>-->
-        <!--        <module name="WhitespaceAround"/>-->
+        <module name="EmptyLineSeparator"/>
+
+        <module name="GenericWhitespace"/>
+        <module name="MethodParamPad"/>
+        <module name="NoLineWrap"/>
+        <module name="ParenPad"/>
+        <module name="TypecastParenPad"/>
+        <module name="WhitespaceAfter"/>
+        <module name="WhitespaceAround"/>
+
+        <!-- regex -->
+        <module name="RegexpSinglelineJava">
+            <property name="format" value="System\.(out)|(err)\.print(ln)?"/>
+            <property name="message" value="Prohibit invoking System.out in source code !"/>
+            <property name="ignoreComments" value="true"/>
+        </module>
+
+        <module name="RegexpSinglelineJava">
+            <property name="format"
+                      value=".*[\u3400-\u4DB5\u4E00-\u9FA5\u9FA6-\u9FBB\uF900-\uFA2D\uFA30-\uFA6A\uFA70-\uFAD9\uFF00-\uFFEF\u2E80-\u2EFF\u3000-\u303F\u31C0-\u31EF]+.*"/>
+            <property name="message" value="Not allow chinese character !"/>
+            <property name="ignoreComments" value="true"/>
+        </module>
 
     </module>
 </module>
