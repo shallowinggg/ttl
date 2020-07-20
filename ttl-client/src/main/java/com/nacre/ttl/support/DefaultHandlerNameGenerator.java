@@ -14,12 +14,11 @@ import java.lang.reflect.Method;
  *     Method m = o.getClass().getDeclaredMethod("hashCode");
  *     TaskHandler handler = new MethodReflectTaskHandler(o, m);
  *     String handlerName = DefaultHandlerNameGenerator.INSTANCE.generateHandlerName(handler);
- *     Assert.equals("j.u.Date.hashCode", handlerName); // ture
+ *     Assert.equals("j.u.Date#hashCode", handlerName); // ture
  * </code>
  * </pre>
  *
  * @author ding shimin
- * @date 2020/7/20
  * @since 1.0
  */
 public class DefaultHandlerNameGenerator implements HandlerNameGenerator {

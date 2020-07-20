@@ -10,7 +10,6 @@ import java.lang.annotation.Target;
 
 /**
  * @author ding shimin
- * @date 2020/7/20
  * @since 1.0
  */
 @Retention(RetentionPolicy.RUNTIME)

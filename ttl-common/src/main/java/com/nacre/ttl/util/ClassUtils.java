@@ -7,6 +7,7 @@ import java.util.Objects;
  * Convenient utility methods for class operation.
  *
  * @author ding shimin
+ * @since 1.0
  */
 public final class ClassUtils {
 

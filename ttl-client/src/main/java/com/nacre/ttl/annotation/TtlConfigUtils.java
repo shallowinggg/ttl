@@ -6,10 +6,9 @@ import org.springframework.beans.factory.support.RootBeanDefinition;
 
 /**
  * @author ding shimin
- * @date 2020/7/20
  * @since 1.0
  */
-public class TtlConfigUtils {
+public final class TtlConfigUtils {
 
     public static final String TASK_ANNOTATION_PROCESSOR_BEAN_NAME = "internalTaskAnnotationBeanPostProcessor";
 
