@@ -4,17 +4,34 @@ import java.lang.reflect.Method;
 import java.util.Objects;
 
 /**
+ * Convenient utility methods for class operation.
+ *
  * @author ding shimin
- * @date 2020/7/20
  */
-public class ClassUtils {
+public final class ClassUtils {
 
 
+    /**
+     * Return the parameter types for given method.
+     *
+     * @param method the method to check params
+     * @return parameter types
+     */
     public static Class<?>[] getMethodParameters(Method method) {
         Objects.requireNonNull(method, "method must not be null");
         return method.getParameterTypes();
     }
 
+    /**
+     * Return a simplified full qualified name for given class.
+     * This method will only allow the first char of sub package
+     * name exists. For example: <pre>
+     *     Assert.equals("j.u.Date", java.utils.Date.class); // true
+     * </pre>
+     *
+     * @param clazz the class to simplify
+     * @return simplified full qualified class name
+     */
     public static String simplyFullClassName(Class<?> clazz) {
         String fullName = clazz.getName();
         String[] names = fullName.split("\\.");
